@@ -10,9 +10,9 @@
 
     <!--Description-->
     
-        <meta name="description" content="Quick StartWelcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Create a new post1$ hexo new &#34;My New Post&#34;
-More info: Writing">
+        <meta name="description" content="3种Web会话管理方式无状态的HTTP
+
+一次请求结束、链接断开。服务器再收到下一个请求、它就不知道是哪个用户发过来了。但是服务器会知道是从哪个客户端发起的、不过我们管理的是用户、不是客户端。所以就有了会话管理​​">
     
 
     <!--Author-->
@@ -22,7 +22,7 @@ More info: Writing">
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Hello World"/>
+        <meta property="og:title" content="3种Web会话管理方式"/>
     
 
     <!--Open Graph Description-->
@@ -44,7 +44,7 @@ More info: Writing">
 
     <!-- Title -->
     
-    <title>Hello World - @tian田小旺のBlog</title>
+    <title>3种Web会话管理方式 - @tian田小旺のBlog</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css">
@@ -112,14 +112,14 @@ More info: Writing">
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">Hello World</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">Aug 21. 2017</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">3种Web会话管理方式</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">Sep 01. 2017</p>
         </div>
     </div>
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fa fa-file-text-o"></i>
+        <i class="header-icon fa fa-comments"></i>
     </div>
 </div>
 
@@ -131,21 +131,80 @@ More info: Writing">
                 <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
                     <!-- Tags Vertical -->
                     
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/web/">#web</a> <a class="fw3 ph1 dib" href="/tags/session/">#session</a> <a class="fw3 ph1 dib" href="/tags/cookie/">#cookie</a>
+                            </div>
+                        </div>
+                    
 
                     <!-- Main Post Content -->
-                    <h1 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h1><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+                    <h1 id="3种Web会话管理方式"><a href="#3种Web会话管理方式" class="headerlink" title="3种Web会话管理方式"></a>3种Web会话管理方式</h1><p><strong>无状态的HTTP</strong></p>
+<blockquote>
+<p>一次请求结束、链接断开。服务器再收到下一个请求、它就不知道是哪个用户发过来了。但是服务器会知道是从哪个客户端发起的、不过我们管理的是用户、不是客户端。所以就有了会话管理​​</p>
+</blockquote>
 <a id="more"></a>
-<h2 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h2 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h2 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+<h2 id="server端session"><a href="#server端session" class="headerlink" title="server端session"></a>server端session</h2><h3 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h3><ol>
+<li>用户第一次请求 –&gt; 服务器创建session对象(每个session会分配有唯一id，以及设置有失效时间) –&gt; 服务器通过cookie返回sessionid到浏览器</li>
+<li>用户请求 –&gt; 服务器获取cookie里的sessionid –&gt; 验证session有效 –&gt; 服务器延长失效时间</li>
+<li>session超过失效时间 –&gt; 服务器销毁该session –&gt; 用户请求 –&gt; 服务器创建新session –&gt; 重新登录</li>
+<li>用户登录成功 –&gt; 服务器往session里设置登录凭证</li>
+<li>用户请求 –&gt; sessionid通过cookie携带发送到服务器 –&gt; 服务器验证对应session的登录凭证 –&gt; 响应请求</li>
+<li>用户登出 –&gt; 服务器清除登录凭证</li>
+</ol>
+<h3 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h3><ol>
+<li>Java、.net、PHP原生支持，开发简单</li>
+<li>安全性好。只要sessionid足够随机</li>
+</ol>
+<h3 id="缺点"><a href="#缺点" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li>多用户同时在线会占据较大内存</li>
+<li>应用采用集群部署时需要处理多台服务器之间session共享的问题</li>
+<li>多台服务器之间共享session时，还可能需要处理跨域问题</li>
+<li>不适合用在native app：不好管理cookie</li>
+<li>不适合用来做纯API服务的登录认证</li>
+</ol>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><ul>
+<li>对缺点1和2：可以采用中间服务器管理session</li>
+<li>对缺点3：前后端解决sessionid的cookie跨域即可</li>
+<li>实际使用时可以采用单点登录框架</li>
+</ul>
+<h2 id="cookie-base"><a href="#cookie-base" class="headerlink" title="cookie-base"></a>cookie-base</h2><h3 id="过程-1"><a href="#过程-1" class="headerlink" title="过程"></a>过程</h3><ol>
+<li>用户登录 –&gt; 服务器创建登录凭证、数字签名、对称加密 –&gt; key-value形式写入cookie</li>
+<li>用户请求 –&gt; 服务器获取cookie、解密、数字签名认证 –&gt; 判断登录凭证有效期 –&gt; 重新登录/响应请求</li>
+</ol>
+<h3 id="优点-1"><a href="#优点-1" class="headerlink" title="优点"></a>优点</h3><ol>
+<li>减轻服务端内存压力，只需要创建和验证cookie</li>
+<li>没有多服务器共享session的问题，只需要登录逻辑、数字签名和密钥文件在服务器之间共享</li>
+<li>很多web开发平台(比如PHP的yii)或框架默认使用该方式</li>
+</ol>
+<h3 id="缺点-1"><a href="#缺点-1" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li>cookie的大小限制</li>
+<li>依然用了cookie，所以也有跨域问题</li>
+<li>不适合用在native app：不好管理cookie</li>
+<li>不适合用来做纯API服务的登录认证 </li>
+</ol>
+<h2 id="token-base"><a href="#token-base" class="headerlink" title="token-base"></a>token-base</h2><h3 id="过程-2"><a href="#过程-2" class="headerlink" title="过程"></a>过程</h3><ol>
+<li>(类似cookie-based)用户登录 –&gt; 服务端返回token到客户端</li>
+<li>用户请求(通过url参数或者http header主动带上token) –&gt; 服务端验证token</li>
+</ol>
+<h3 id="优点-2"><a href="#优点-2" class="headerlink" title="优点"></a>优点</h3><ol>
+<li>适用于native app、SPA</li>
+</ol>
+<h3 id="缺点-2"><a href="#缺点-2" class="headerlink" title="缺点"></a>缺点</h3><ol>
+<li>仅限于纯API的web应用，不适用于点击链接直接请求的情况</li>
+<li>可能会有跨域问题，不过很容易解决</li>
+<li>token刷新的问题需要注意</li>
+</ol>
+<h3 id="相关"><a href="#相关" class="headerlink" title="相关"></a>相关</h3><ul>
+<li><a href="https://jwt.io" target="_blank" rel="external">JWT标准(json-web-token)</a></li>
+</ul>
 
                     
                     <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/web/">#web</a> <a class="fw3 ph1 dib" href="/tags/session/">#session</a> <a class="fw3 ph1 dib" href="/tags/cookie/">#cookie</a>
+                        </div>
                     
 
                     <!-- Comments -->
@@ -173,6 +232,22 @@ More info: Writing">
                     <hr class="dn-l mw4 black-50 mt5" />
                     
                     <!-- Widget 2: Categories -->
+                    
+                        <div class="mt5 tc tl-l">
+    <h3>Catégories</h3>
+    
+        <p>
+            <a href="/categories/web/">web</a>
+        </p>
+    
+        <p>
+            <a href="/categories/web/http/">http</a>
+        </p>
+    
+</div>
+
+
+                        <hr class="dn-l mw4 black-50 mt5" />
                     
 
                     <!-- Widget 3: Recent Posts -->
