@@ -1,3 +1,24 @@
+
+
+<!-- Disqus Comments -->
+<% if (theme.git_comments){ %>
+  <div id="container" style="margin: 0 auto; width: 80%;"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script>
+    var gitment = new Gitment({
+      id: '<%= page.title %>', // 可选。默认为 location.href
+      owner: '<%= theme.git_comments.owner %>',
+      repo: '<%= theme.git_comments.repo %>',
+      oauth: {
+        client_id: '<%= theme.git_comments.client_id %>',
+        client_secret: '<%= theme.git_comments.client_secret %>',
+      },
+    })
+    gitment.render('container')
+  </script>
+<% } %>
+
 <div class="bg-1 ph2 ph5-ns pv5">
         <div class="mv8">
             <div class="center tc">

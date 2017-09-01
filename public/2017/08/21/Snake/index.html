@@ -219,6 +219,27 @@
 
 
 <!-- Footer -->
+
+
+<!-- Disqus Comments -->
+
+  <div id="container" style="margin: 0 auto; width: 80%;"></div>
+  <link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">
+  <script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+  <script>
+    var gitment = new Gitment({
+      id: 'JS Game -- Snake', // 可选。默认为 location.href
+      owner: 'tianwang8090',
+      repo: 'comments4blog',
+      oauth: {
+        client_id: '6ea6773cfba91f9afa91',
+        client_secret: 'e1dda4f16de9fb3dcf6056a9c6f07aa6acde7fc3',
+      },
+    })
+    gitment.render('container')
+  </script>
+
+
 <div class="bg-1 ph2 ph5-ns pv5">
         <div class="mv8">
             <div class="center tc">
