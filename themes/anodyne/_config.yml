@@ -33,10 +33,10 @@ comments:
 
 # Comments.
 git_comments:
-  owner: "tianwang8090"
-  repo: "comments4blog"
-  client_id: 6ea6773cfba91f9afa91
-  client_secret: e1dda4f16de9fb3dcf6056a9c6f07aa6acde7fc3
+  # owner: "tianwang8090"
+  # repo: "comments4blog"
+  # client_id: 6ea6773cfba91f9afa91
+  # client_secret: e1dda4f16de9fb3dcf6056a9c6f07aa6acde7fc3
 
 # Google Analytics Tracking ID
 google_analytics:
