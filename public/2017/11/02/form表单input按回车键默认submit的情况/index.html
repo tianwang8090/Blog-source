@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="[TOC]
+一、先说事件处理的几种方式（no jQuery）1.事件属性12345678&amp;lt;!-- 事件句柄接收的参数中，事件对象只能为&#39;event&#39;，&#39;this&#39;保留字为事件DOM本身 --&amp;gt;&amp;lt;input type=&#34;text&#34; onkeydown=&#34;foo(event, this">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="@tian田小旺">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="form表单input按回车键默认submit的情况"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="@tian田小旺のBlog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>form表单input按回车键默认submit的情况 - @tian田小旺のBlog</title>
+
+    <!-- Tachyons Core CSS -->
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- baidu Analytics -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?3c1ad054f928f58635ae498186c58970";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>        
+
+</head>
+
+
+<body>
+
+<!-- Main Content -->
+<!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+    
+    <nav class="db dt-l w-100 mw8 center border-box pv3">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="@tian田小旺のBlog">
+            <img src="\assets\4balloon.svg" class="dib h3" alt="@tian田小旺のBlog">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/" 
+                    title="Home">
+                    Home
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/archives" 
+                    title="Archives">
+                    Archives
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/about.html" 
+                    title="About">
+                    About
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/contact.html" 
+                    title="Contact">
+                    Contact
+                </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-40 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns">form表单input按回车键默认submit的情况</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">Nov 02. 2017</p>
+        </div>
+    </div>
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fa fa-form"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+
+                    <!-- Main Post Content -->
+                    <p>[TOC]</p>
+<h2 id="一、先说事件处理的几种方式（no-jQuery）"><a href="#一、先说事件处理的几种方式（no-jQuery）" class="headerlink" title="一、先说事件处理的几种方式（no jQuery）"></a>一、先说事件处理的几种方式（no jQuery）</h2><h3 id="1-事件属性"><a href="#1-事件属性" class="headerlink" title="1.事件属性"></a>1.事件属性</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 事件句柄接收的参数中，事件对象只能为'event'，'this'保留字为事件DOM本身 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">onkeydown</span>=<span class="string">"foo(event, this)"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params">eventObj, eventTarget</span>) </span>&#123;</span></div><div class="line"><span class="javascript">    <span class="built_in">console</span>.log(eventObj);</span></div><div class="line"><span class="javascript">    <span class="built_in">console</span>.log(eventTarget);</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="2-javascript添加属性"><a href="#2-javascript添加属性" class="headerlink" title="2.javascript添加属性"></a>2.javascript添加属性</h3><p>通过js添加的事件会覆盖已经存在的事件。(类似一个属性的修改)<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"a"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="built_in">document</span>.getElementById(<span class="string">"a"</span>).onkeydown = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></div><div class="line"><span class="javascript">    <span class="built_in">console</span>.log(e);</span></div><div class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="3-javascript事件监听"><a href="#3-javascript事件监听" class="headerlink" title="3.javascript事件监听"></a>3.javascript事件监听</h3><p>通过<code>addEventListener()</code>添加的s事件不会覆盖已存在到的事件；通过<code>removeEventListener()</code>可以移出添加的事件<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"a"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="comment">// 所有主流浏览器，除了 IE 8 及更早 IE版本</span></span></div><div class="line"><span class="javascript">  <span class="built_in">document</span>.getElementById(<span class="string">"a"</span>).addEventListener(<span class="string">"keydown"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></div><div class="line"><span class="javascript">    <span class="built_in">console</span>.log(e);</span></div><div class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span></div><div class="line"><span class="undefined">  &#125;)</span></div><div class="line"><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="comment">// IE 8 及更早 IE 版本</span></span></div><div class="line"><span class="javascript">  <span class="built_in">document</span>.getElementById(<span class="string">"a"</span>).attachEvent(<span class="string">"onkeydown"</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span></div><div class="line"><span class="javascript">    <span class="built_in">console</span>.log(e);</span></div><div class="line"><span class="javascript">    <span class="built_in">console</span>.log(<span class="keyword">this</span>);</span></div><div class="line"><span class="undefined">  &#125;)</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="二、重现情况"><a href="#二、重现情况" class="headerlink" title="二、重现情况"></a>二、重现情况</h2><h3 id="情况1-只有一个input：input回车会submit"><a href="#情况1-只有一个input：input回车会submit" class="headerlink" title="情况1.只有一个input：input回车会submit"></a>情况1.只有一个input：input回车会submit</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"//baidu.com"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<h3 id="情况2-一个或多个input和一个或多个button：input回车会submit"><a href="#情况2-一个或多个input和一个或多个button：input回车会submit" class="headerlink" title="情况2.一个或多个input和一个或多个button：input回车会submit"></a>情况2.一个或多个input和一个或多个button：input回车会submit</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"//baidu.com"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"test1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"test2"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span>&gt;</span>btn1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span>&gt;</span>btn2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>注意：form中button默认type=‘submit’，所以点击button会submit</p>
+<h3 id="情况3-一个或多个input和一个或多个input-type-’submit’-：input回车会submit"><a href="#情况3-一个或多个input和一个或多个input-type-’submit’-：input回车会submit" class="headerlink" title="情况3.一个或多个input和一个或多个input(type=’submit’)：input回车会submit"></a>情况3.一个或多个input和一个或多个input(type=’submit’)：input回车会submit</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"//baidu.com"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"test1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"test2"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"btn2"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"btn3"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>由2和3可知：form中下面三种表单控件（按钮）是等效的</p>
+<ul>
+<li><code>&lt;input type=&quot;submit&quot; value=&quot;btn&quot;&gt;</code> </li>
+<li><code>&lt;button&gt;btn&lt;/button&gt;</code> </li>
+<li><code>&lt;button type=&#39;submit&#39;&gt;btn&lt;/button&gt;</code> </li>
+</ul>
+<h2 id="三、重现总结"><a href="#三、重现总结" class="headerlink" title="三、重现总结"></a>三、重现总结</h2><p>在input中回车会submit：</p>
+<ol>
+<li>如果form中只有一个input；</li>
+<li>如果form中有submit类型的按钮；</li>
+</ol>
+<h2 id="四、解决方法"><a href="#四、解决方法" class="headerlink" title="四、解决方法"></a>四、解决方法</h2><h3 id="对于情况1"><a href="#对于情况1" class="headerlink" title="对于情况1"></a>对于情况1</h3><ol>
+<li><p>添加隐藏的input：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"//baidu.com"</span>&gt;</span>  </div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"test"</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- 通过style设置隐藏 --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">""</span> <span class="attr">style</span>=<span class="string">"display: none"</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- 通过设置type='hidden'是无效的 --&gt;</span></div><div class="line">  <span class="comment">&lt;!-- &lt;input type="hidden"&gt; --&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>阻止input回车默认事件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"//baidu.com"</span>&gt;</span>  </div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"test"</span> <span class="attr">onkeydown</span>=<span class="string">"fun(event)"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="function"><span class="keyword">function</span> <span class="title">fun</span> (<span class="params">e</span>) </span>&#123;</span></div><div class="line"><span class="javascript">    <span class="keyword">if</span> (e &amp;&amp; e.keyCode === <span class="number">13</span>)&#123;</span></div><div class="line"><span class="undefined">      e.preventDefault();</span></div><div class="line"><span class="javascript">      <span class="comment">// return false; 无效</span></span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 以下等效 --&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"//baidu.com"</span>&gt;</span>  </div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"input_test"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"test"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="built_in">document</span>.getElementById(<span class="string">"input_test"</span>).onkeydown = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></div><div class="line"><span class="javascript">    <span class="keyword">if</span> (e &amp;&amp; e.keyCode === <span class="number">13</span>)&#123;</span></div><div class="line"><span class="undefined">      e.preventDefault();</span></div><div class="line"><span class="javascript">      <span class="comment">// return false; 有效</span></span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 以下等效 --&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"//baidu.com"</span>&gt;</span>  </div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"input_test"</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"test"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="built_in">document</span>.getElementById(<span class="string">"input_test"</span>).addEventListener(<span class="string">"keydown"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></div><div class="line"><span class="javascript">    <span class="keyword">if</span> (e &amp;&amp; e.keyCode === <span class="number">13</span>)&#123;</span></div><div class="line"><span class="undefined">      e.preventDefault();</span></div><div class="line"><span class="javascript">      <span class="comment">// return false; 无效</span></span></div><div class="line"><span class="undefined">    &#125;</span></div><div class="line"><span class="undefined">  &#125;)</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+<li><p>阻止form的默认submit提交事件</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"//baidu.com"</span> <span class="attr">onsubmit</span>=<span class="string">"fun(event)"</span>&gt;</span>  </div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"test"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="function"><span class="keyword">function</span> <span class="title">fun</span> (<span class="params">e</span>) </span>&#123;    </span></div><div class="line"><span class="undefined">    e &amp;&amp; e.preventDefault();</span></div><div class="line"><span class="javascript">    <span class="comment">// return false; 无效</span></span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 以下等效 --&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"//baidu.com"</span> <span class="attr">id</span>=<span class="string">"form_test"</span>&gt;</span>  </div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"test"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="built_in">document</span>.getElementById(<span class="string">"form_test"</span>).onsubmit = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></div><div class="line"><span class="undefined">    e.preventDefault();</span></div><div class="line"><span class="javascript">    <span class="comment">// return false; 有效</span></span></div><div class="line"><span class="undefined">  &#125;;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 以下等效 --&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"//baidu.com"</span> <span class="attr">id</span>=<span class="string">"form_test"</span>&gt;</span>  </div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"test"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="built_in">document</span>.getElementById(<span class="string">"form_test"</span>).onsubmit = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></div><div class="line"><span class="undefined">    e.preventDefault();</span></div><div class="line"><span class="javascript">    <span class="comment">// return false; 有效</span></span></div><div class="line"><span class="undefined">  &#125;;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="对于情况2和情况3"><a href="#对于情况2和情况3" class="headerlink" title="对于情况2和情况3"></a>对于情况2和情况3</h3><p>如果采用阻止默认的submit事件（如下），即使点击btn3也不会submit了，<strong>这不是我们想要的。</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"//baidu.com"</span> <span class="attr">id</span>=<span class="string">"form_test"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"test1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"test2"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span>&gt;</span>btn1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span>&gt;</span>btn2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span>btn3<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="built_in">document</span>.getElementById(<span class="string">"form_test"</span>).onsubmit = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></div><div class="line"><span class="undefined">    e.preventDefault();</span></div><div class="line"><span class="javascript">    <span class="comment">// return false; 等效</span></span></div><div class="line"><span class="undefined">  &#125;</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>方法：给form里面的所有input的onkeydown事件取消默认操作<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"//baidu.com"</span> <span class="attr">id</span>=<span class="string">"form_test"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"test1"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">value</span>=<span class="string">"test2"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span>&gt;</span>btn1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">button</span>&gt;</span>btn2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"submit"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line"><span class="javascript">  <span class="keyword">var</span> inputList = <span class="built_in">document</span>.getElementById(<span class="string">"form_test"</span>).getElementsByTagName(<span class="string">"input"</span>);</span></div><div class="line"><span class="javascript">	<span class="built_in">Array</span>.prototype.forEach.call(inputList, <span class="function"><span class="keyword">function</span>(<span class="params">obj</span>) </span>&#123;</span></div><div class="line"><span class="javascript">    obj.addEventListener(<span class="string">"keydown"</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></div><div class="line"><span class="undefined">      e.preventDefault();</span></div><div class="line"><span class="javascript">      <span class="comment">//return false; 无效</span></span></div><div class="line"><span class="undefined">    &#125;)</span></div><div class="line"><span class="undefined">  &#125;);</span></div><div class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h2 id="四、总结"><a href="#四、总结" class="headerlink" title="四、总结"></a>四、总结</h2><ol>
+<li>给按钮添加type属性，明确意图，可以避免跳坑</li>
+<li>尽量用ajax提交表单信息，尽量避免form提交</li>
+<li>通过上面的比较，阻止事件中<code>e.preventDefault()</code>相比<code>return false</code>在上述所有情况下均适用。</li>
+</ol>
+
+                    
+                    <!-- Tags Bottom -->
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="http://tva2.sinaimg.cn/crop.0.0.1152.1152.180/bfe3e06cjw8erzjurci75j20w00w0q5f.jpg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="@tian田小旺">
+        </div>
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            My name is Tian Wang and this is my blog.<br>I am a web front-end engineer.<br> I currently live and work in GuangZhou, China. The blog is just a baby now, I'll make it better.
+        </div>
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 2: Categories -->
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>Recent Posts</h3>
+    
+        <p>
+            <a href="/2017/11/02/form表单input按回车键默认submit的情况/">form表单input按回车键默认submit的情况</a>
+        </p>
+    
+        <p>
+            <a href="/2017/09/27/关于meta标签/">关于meta标签</a>
+        </p>
+    
+        <p>
+            <a href="/2017/09/01/3种Web会话管理方式/">3种Web会话管理方式</a>
+        </p>
+    
+        <p>
+            <a href="/2017/08/24/Markdown常用的简单语法/">Markdown常用的简单语法</a>
+        </p>
+    
+        <p>
+            <a href="/2017/08/24/由一个snake引出的主题map/">由一个snake引出的主题map</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+
+
+<!-- Disqus Comments -->
+
+
+<div class="bg-1 ph2 ph5-ns pv5">
+        <div class="mv8">
+            <div class="center tc">
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="http://weibo.com/u/3219382380/" target="_blank">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/tianwang8090" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="mailto:tianwang8090@163.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="f6 f5-ns center tc white pt5 fw3">
+                <a class="link dim white" href="http://weibo.com/u/3219382380/">@tian田小旺</a>. All right reserved | Design & Hexo 
+            </div>
+        </div>
+    </div>
+
+<!-- After Footer -->
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
