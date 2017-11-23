@@ -10,7 +10,8 @@
 
     <!--Description-->
     
-        <meta name="description" content="">
+        <meta name="description" content="jQuery操作checked如果你在开发中需要用jQuery操作单选(radio)或者多选(checkbox)元素的选中与取消选中，那你可能会遇到这样的问题：
+假设有这样的一个checkbox:1&amp;lt;input type=&#34;checkbox&#34; id=&#34;abc&#34;&amp;gt;&amp;lt;/input&amp;gt">
     
 
     <!--Author-->
@@ -20,7 +21,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="由一个snake引出的主题map"/>
+        <meta property="og:title" content="关于HTML中input标签(radio|checkbox)的checked属性"/>
     
 
     <!--Open Graph Description-->
@@ -42,7 +43,7 @@
 
     <!-- Title -->
     
-    <title>由一个snake引出的主题map - @tian田小旺のBlog</title>
+    <title>关于HTML中input标签(radio|checkbox)的checked属性 - @tian田小旺のBlog</title>
 
     <!-- Tachyons Core CSS -->
     <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css">
@@ -123,14 +124,14 @@
     <!-- Title -->
     <div class="w-100 mw8 center vh-40 dt">
         <div class="dtc v-mid white">
-            <h1 class="f1-l f2-m tc tc-m tl-ns">由一个snake引出的主题map</h1>
-            <p class="f4 fw3 pab-100px tc tc-m tl-ns">Aug 24. 2017</p>
+            <h1 class="f1-l f2-m tc tc-m tl-ns">关于HTML中input标签(radio|checkbox)的checked属性</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">Nov 23. 2017</p>
         </div>
     </div>
 
     <!-- Icon -->
     <div class="relative w-100 mw8 center white dn dn-m db-ns">
-        <i class="header-icon fa fa-file-text-o"></i>
+        <i class="header-icon fa fa-html5"></i>
     </div>
 </div>
 
@@ -142,12 +143,49 @@
                 <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
                     <!-- Tags Vertical -->
                     
+                        <div class="tags-container-vertical">
+                            <div class="tags-sub-container">
+                                <a class="fw3 ph1 dib" href="/tags/html/">#html</a>
+                            </div>
+                        </div>
+                    
 
                     <!-- Main Post Content -->
-                    <p><img src="/my-pro/由一个snake引出的主题map.png" alt="主题图片"></p>
+                    <h2 id="jQuery操作checked"><a href="#jQuery操作checked" class="headerlink" title="jQuery操作checked"></a>jQuery操作checked</h2><p>如果你在开发中需要用jQuery操作单选(radio)或者多选(checkbox)元素的选中与取消选中，那你可能会遇到这样的问题：</p>
+<p>假设有这样的一个checkbox:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"checkbox"</span> <span class="attr">id</span>=<span class="string">"abc"</span>&gt;</span><span class="tag">&lt;/<span class="name">input</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>你要用jQuery改变他的选中状态，你可能会这样子写：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#id"</span>).attr(<span class="string">"checked"</span>, <span class="string">"true"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>然而你会发现并没有实现期望，经过简单的百度，会有很多文章告诉你用下面的方法：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$(<span class="string">"#id"</span>).prop(<span class="string">"checked"</span>, <span class="string">"true"</span>);</span><br></pre></td></tr></table></figure></p>
+<p>然后就成功了。我就是这样过来的。</p>
+<p>然后我去看了二者的区别(用谷歌翻译这两句话你会很无助):<a href="http://api.jquery.com/category/manipulation/general-attributes/" target="_blank" rel="noopener">jquery官网地址</a></p>
+<ul>
+<li>.attr()<blockquote>
+<p>Get the value of an attribute for the first element in the set of matched elements or set one or more attributes for every matched element.</p>
+</blockquote>
+</li>
+<li>.prop()<blockquote>
+<p>Get the value of a property for the first element in the set of matched elements or set one or more properties for every matched element.</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="关于attribute和property"><a href="#关于attribute和property" class="headerlink" title="关于attribute和property"></a>关于<code>attribute</code>和<code>property</code></h2><p>写这篇文章的时候看到一篇译文，讲的正好是他们的区别：<a href="https://segmentfault.com/a/1190000008781121" target="_blank" rel="noopener">传送门</a>，可以去看看，还比较仔细。<br>总结一下就是：</p>
+<ol>
+<li>attribute(特性)是HTML标签上的。<blockquote>
+<p>attribute(特性)需要通过getAttribute|setAttribute方法操作。比如常见的class操作，不能<code>ele.class</code>出来的。</p>
+</blockquote>
+</li>
+<li>property(属性)属于DOM对象。<blockquote>
+<p>property(属性)类似JS的对象，可以直接<code>.</code>或者<code>[xxx]</code>操作。</p>
+</blockquote>
+</li>
+</ol>
+<p>其实对于这些不清晰的我，打开chrome控制台看了一下就明白了：<br><img src="/assets/input20171123.png" alt="控制台图片"></p>
 
                     
                     <!-- Tags Bottom -->
+                    
+                        <div class="tags-container-bottom">
+                            <i class="fa fa-tag pr3 text-main-color"></i><a class="fw3 ph1 dib" href="/tags/html/">#html</a>
+                        </div>
                     
 
                     <!-- Comments -->
