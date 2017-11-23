@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="平台信息： win 10 64bit, Chrome 62 64bit
+
+一、基础的CSS样式优先级1234567891011121314151617181920212223242526272829303132333435363738394041424344454647&amp;lt;!DOCTYPE ht">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="@tian田小旺">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="CSS样式优先级"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="@tian田小旺のBlog"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+    <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>CSS样式优先级 - @tian田小旺のBlog</title>
+
+    <!-- Tachyons Core CSS -->
+    <link rel="stylesheet" href="//unpkg.com/tachyons/css/tachyons.min.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <link rel="shortcut icon" href="/favicon.ico" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- baidu Analytics -->
+    <script>
+        var _hmt = _hmt || [];
+        (function() {
+          var hm = document.createElement("script");
+          hm.src = "https://hm.baidu.com/hm.js?3c1ad054f928f58635ae498186c58970";
+          var s = document.getElementsByTagName("script")[0]; 
+          s.parentNode.insertBefore(hm, s);
+        })();
+    </script>        
+
+</head>
+
+
+<body>
+
+<!-- Main Content -->
+<!-- Banner -->
+<!-- Banner -->
+<div class="w-100 bg-1 ph5-ns ph3 text-light">
+    
+    <nav class="db dt-l w-100 mw8 center border-box pv3">
+        <a class="db dtc-l v-mid link dim w-100 w-25-l tc tl-l mb2 mb0-l white" href="/" title="@tian田小旺のBlog">
+            <img src="/assets/4balloon.svg" class="dib h3" alt="@tian田小旺のBlog">
+        </a>
+        <div class="db dtc-l v-mid w-100 w-75-l tc tr-l">
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/" 
+                    title="Home">
+                    Home
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/archives" 
+                    title="Archives">
+                    Archives
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/about.html" 
+                    title="About">
+                    About
+                </a>
+            
+                <a class="link dim f6 f5-l dib mr3 mr4-l white" 
+                    href="/contact.html" 
+                    title="Contact">
+                    Contact
+                </a>
+            
+        </div>
+    </nav>
+
+    <!-- Title -->
+    <div class="w-100 mw8 center vh-40 dt">
+        <div class="dtc v-mid white">
+            <h1 class="f1-l f2-m tc tc-m tl-ns">CSS样式优先级</h1>
+            <p class="f4 fw3 pab-100px tc tc-m tl-ns">Nov 03. 2017</p>
+        </div>
+    </div>
+
+    <!-- Icon -->
+    <div class="relative w-100 mw8 center white dn dn-m db-ns">
+        <i class="header-icon fa fa-css3"></i>
+    </div>
+</div>
+
+<!-- Content -->
+<div class="w-100 ph2 ph4-m ph5-l mv5 mv6-l">
+    <div class="content">
+        <div class="mw8 center">
+            <div class="cf">
+                <div class="fl w-100 w-70-l mw7 left fw3 lh-copy pr4-ns pr0-m post-content">
+                    <!-- Tags Vertical -->
+                    
+
+                    <!-- Main Post Content -->
+                    <blockquote>
+<p>平台信息： win 10 64bit, Chrome 62 64bit</p>
+</blockquote>
+<h2 id="一、基础的CSS样式优先级"><a href="#一、基础的CSS样式优先级" class="headerlink" title="一、基础的CSS样式优先级"></a>一、基础的CSS样式优先级</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- link引入外部样式表，外部样式表的位置就是link标签的位置 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">href</span>=<span class="string">"index.css"</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!-- style标签内为内部样式表 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">      /* 浏览器会有默认样式，页面上的样式默认会继承浏览器默认样式 */</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">      /* body是#childId元素的父元素，color属性属于继承属性，子元素会继承父元素的继承属性*/</span></span><br><span class="line"><span class="undefined">      body &#123;</span></span><br><span class="line"><span class="undefined">        color: blueviolet;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">      /* 标签选择器 */</span></span><br><span class="line"><span class="undefined">      p &#123;</span></span><br><span class="line"><span class="undefined">        color: b;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">      /* 类选择器 */</span></span><br><span class="line"><span class="undefined">      .childClass &#123;</span></span><br><span class="line"><span class="undefined">        color: orangered;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">      /* 组合选择器（选择器组合起来，优先级比重相加） */</span></span><br><span class="line"><span class="undefined">      p.childClass &#123;</span></span><br><span class="line"><span class="undefined">        color: grey;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">      /* id选择器 */</span></span><br><span class="line"><span class="undefined">      #childId &#123;</span></span><br><span class="line"><span class="undefined">        color: orange;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined">      /* 相同选择器书写顺序：下面覆盖上面，文字颜色会为green */</span></span><br><span class="line"><span class="undefined">      #childId &#123;</span></span><br><span class="line"><span class="undefined">        color: green;</span></span><br><span class="line"><span class="undefined">      &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"fatherClass"</span> <span class="attr">id</span>=<span class="string">"fatherId"</span>&gt;</span></span><br><span class="line">      <span class="comment">&lt;!-- style属性：行内样式(内联样式) --&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"childClass"</span> <span class="attr">id</span>=<span class="string">"childId"</span> <span class="attr">style</span>=<span class="string">"color: red;"</span>&gt;</span>texttext<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="二、优先级规则总结："><a href="#二、优先级规则总结：" class="headerlink" title="二、优先级规则总结："></a>二、优先级规则总结：</h2><h3 id="优先级权重"><a href="#优先级权重" class="headerlink" title="优先级权重"></a>优先级权重</h3><table>
+<thead>
+<tr>
+<th>CSS选择器</th>
+<th>优先级比重（数字越大，优先级越高）：</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>!important</code>（慎用）</td>
+<td>∞</td>
+</tr>
+<tr>
+<td>行内样式</td>
+<td>1000</td>
+</tr>
+<tr>
+<td>id选择器</td>
+<td>100</td>
+</tr>
+<tr>
+<td>类选择器、伪类选择器、属性选择器</td>
+<td>10</td>
+</tr>
+<tr>
+<td>标签选择器、伪元素选择器</td>
+<td>1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="优先级顺序"><a href="#优先级顺序" class="headerlink" title="优先级顺序"></a>优先级顺序</h3><ol>
+<li>!important(慎用)</li>
+<li>行内样式(不推荐)</li>
+<li>id选择器</li>
+<li>类选择器、伪类选择器、属性选择器</li>
+<li>标签选择器、伪元素选择器</li>
+<li>继承</li>
+<li>默认样式</li>
+</ol>
+<h3 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h3><ul>
+<li>先比较优先级权重，再比较书写位置</li>
+<li>不同属性会合并</li>
+<li>相同属性<ol>
+<li>css书写顺序：下面覆盖上面(link引入的外部样式表的位置就是link标签的位置)</li>
+<li>高优先级覆盖低优先级</li>
+</ol>
+</li>
+</ul>
+<h2 id="三、改变优先级"><a href="#三、改变优先级" class="headerlink" title="三、改变优先级"></a>三、改变优先级</h2><h3 id="1-改变书写顺序"><a href="#1-改变书写顺序" class="headerlink" title="1. 改变书写顺序"></a>1. 改变书写顺序</h3><h3 id="2-通过组合选择器改变CSS优先级。比如："><a href="#2-通过组合选择器改变CSS优先级。比如：" class="headerlink" title="2. 通过组合选择器改变CSS优先级。比如："></a>2. 通过组合选择器改变CSS优先级。比如：</h3><table>
+<thead>
+<tr>
+<th>组合选择器</th>
+<th>优先级比重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#childId</code></td>
+<td>100</td>
+</tr>
+<tr>
+<td><code>.childClcass</code></td>
+<td>10</td>
+</tr>
+<tr>
+<td><code>p.childClass</code></td>
+<td>1+10=11</td>
+</tr>
+<tr>
+<td><code>div .childClass</code></td>
+<td>1+10=11</td>
+</tr>
+<tr>
+<td><code>p.childClass.otherClass</code></td>
+<td>1+10+10=21</td>
+</tr>
+<tr>
+<td><code>div.fatherClass .childClass</code></td>
+<td>1+10+10=21</td>
+</tr>
+<tr>
+<td><code>div p.childClass</code></td>
+<td>1+1+10=12</td>
+</tr>
+<tr>
+<td><code>#fatherId</code></td>
+<td>100</td>
+</tr>
+<tr>
+<td><code>#fatherId p</code></td>
+<td>100+1=101</td>
+</tr>
+<tr>
+<td><code>div.fatherClass p.childClass</code></td>
+<td>1+10+1+10=22</td>
+</tr>
+</tbody>
+</table>
+<h3 id="3-important"><a href="#3-important" class="headerlink" title="3. !important"></a>3. <code>!important</code></h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span><span class="selector-class">.childClass</span> &#123;</span><br><span class="line">  <span class="attribute">color</span>: grey <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><strong>在任意css位置使用!important会将该样式优先级提升至最高。（多个!important同样遵从css优先级）</strong></li>
+<li><strong>尽量不要使用!important，否则会给后期的维护带来很大困扰。</strong></li>
+</ul>
+<h3 id="四、CSS建议"><a href="#四、CSS建议" class="headerlink" title="四、CSS建议"></a>四、CSS建议</h3><ul>
+<li>非必要时，尽量不要使用!important</li>
+<li>遵循关注点分离思想，推荐将样式与DOM分开（采用外部样式表或者内部样式表），不推荐书写行内（内联）样式</li>
+<li>建议用类选择器控制样式，为了方便维护</li>
+</ul>
+
+                    
+                    <!-- Tags Bottom -->
+                    
+
+                    <!-- Comments -->
+                    
+
+
+
+                </div>
+                <div class="fl w-100 w-30-l center fw3 lh-copy pl4-ns tl black-50">
+                    
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 1: About -->
+                    <div class="mt5 mt0-l">
+    <article class="dt db-l mw8 mw8-m mw5-ns center ml0-l bg-white mv3">
+        <div class="dn dtc-m db-l v-mid tc pr4 pr0-l" style="min-width: 6rem;">
+            <img src="http://tva2.sinaimg.cn/crop.0.0.1152.1152.180/bfe3e06cjw8erzjurci75j20w00w0q5f.jpg" class="mb4-l br-100 h3 w3 h4-l w4-l dib" title="@tian田小旺">
+        </div>
+        <div class="dtc db-l v-mid lh-copy measure center f6 black-50 tj">
+            My name is Tian Wang and this is my blog.<br>I am a web front-end engineer.<br> I currently live and work in GuangZhou, China. The blog is just a baby now, I'll make it better.
+        </div>
+    </article>
+</div>
+
+                    <hr class="dn-l mw4 black-50 mt5" />
+                    
+                    <!-- Widget 2: Categories -->
+                    
+
+                    <!-- Widget 3: Recent Posts -->
+                    <div class="mt5 tc tl-l">
+    <h3>Récemment</h3>
+    
+        <p>
+            <a href="/2017/11/03/CSS样式优先级/">CSS样式优先级</a>
+        </p>
+    
+        <p>
+            <a href="/2017/11/02/form表单input按回车键默认submit的情况/">form表单input按回车键默认submit的情况</a>
+        </p>
+    
+        <p>
+            <a href="/2017/09/27/关于meta标签/">关于meta标签</a>
+        </p>
+    
+        <p>
+            <a href="/2017/09/01/3种Web会话管理方式/">3种Web会话管理方式</a>
+        </p>
+    
+        <p>
+            <a href="/2017/08/24/Markdown常用的简单语法/">Markdown常用的简单语法</a>
+        </p>
+    
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Footer -->
+
+
+<!-- Disqus Comments -->
+
+
+<div class="bg-1 ph2 ph5-ns pv5">
+        <div class="mv8">
+            <div class="center tc">
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="http://weibo.com/u/3219382380/" target="_blank">
+                            <i class="fa fa-weibo"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="https://github.com/tianwang8090" target="_blank">
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </div>
+                
+                    <div class="dib mh3">
+                        <a class="f3 f2-ns white dim" href="mailto:tianwang8090@163.com" target="_blank">
+                            <i class="fa fa-envelope"></i>
+                        </a>
+                    </div>
+                
+            </div>
+            <div class="f6 f5-ns center tc white pt5 fw3">
+                <a class="link dim white" href="http://weibo.com/u/3219382380/">@tian田小旺</a>. All right reserved | Design & Hexo 
+            </div>
+        </div>
+    </div>
+
+<!-- After Footer -->
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
